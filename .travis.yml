@@ -20,7 +20,7 @@ install:
 
 before_script:
   - psql -c "CREATE DATABASE msoko;" -U postgres
-  - python manage.py syncdb --noinput
+  - python manage.py migrate
 
 script:
   - python manage.py test
