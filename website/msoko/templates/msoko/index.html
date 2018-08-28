@@ -1,0 +1,28 @@
+{% extends "msoko/base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'msoko/css/index.css' %}" /> {% endblock %} {% block scripts %}
+<script type="text/javascript" src="{% static 'msoko/js/index.js' %}"></script>
+{% endblock %} {% block title %}Index{% endblock %} {% block content %}
+<div class="row">
+    <div class="col-sm-9">
+        <a href="{% url 'product-list'%}">View all products</a>
+    </div>
+    <div class="col-sm-3">
+        <h3>Create a product</h3>
+        <form id="product_form" method="POST">
+            <div class="form-group">
+                <label for="product_name" class="label-small">Name</label>
+                <input type="text" class="form-control form-control-sm" id="product_name">
+            </div>
+            <div class="form-group">
+                <label for="product_description" class="label-small">Description</label>
+                <input type="text" class="form-control form-control-sm" id="product_description">
+            </div>
+            <div class="form-group">
+                <label for="product_price" class="label-small">Price</label>
+                <input type="number" class="form-control form-control-sm" id="product_price" min="0" max="100000000" step="any">
+            </div>
+            <button type="submit" class="btn btn-outline-primary btn-sm custom-btn">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

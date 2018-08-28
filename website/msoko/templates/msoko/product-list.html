@@ -1,0 +1,10 @@
+{% extends "msoko/base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'msoko/css/index.css' %}" /> {% endblock %} {% block scripts %}
+<script type="text/javascript" src="{% static 'msoko/js/product_list.js' %}"></script>
+{% endblock %} {% block title %}Product List{% endblock %} {% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table-responsive" id="product_list_table"></table>
+    </div>
+</div>
+{% endblock %}
